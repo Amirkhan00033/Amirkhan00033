@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат-мессенджер</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f3f3f3;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            background-color: white;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>💬 Добро пожаловать в чат</h1>
+    <form method="post">
+        <input type="text" name="username" placeholder="Твоё имя" required>
+        <input type="text" name="message" placeholder="Напиши сообщение" required>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <ul>
+        {% for msg in messages %}
+            <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
